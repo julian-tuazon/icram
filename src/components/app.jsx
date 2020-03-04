@@ -9,6 +9,10 @@ export default class App extends React.Component {
     this.state = {view: 'view-cards'};
   }
 
+  setView(currentView) {
+    this.setState({view: currentView});
+  }
+
   render() {
     return <h1 className="text-center">Flash Card App</h1>;
   }
