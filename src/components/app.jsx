@@ -13,6 +13,19 @@ export default class App extends React.Component {
     this.setState({view: currentView});
   }
 
+  getView() {
+    switch(this.state.view) {
+      case 'create-card':
+        return <CreateCard />;
+      case 'review-cards':
+        return <Review />;
+      case 'view-cards':
+        return <ViewCards />;
+      default:
+        return null;
+    }
+  }
+
   render() {
     return <h1 className="text-center">Flash Card App</h1>;
   }
