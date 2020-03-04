@@ -10,6 +10,8 @@ export default class App extends React.Component {
     this.state = { view: 'view-cards', cards: [] };
     this.getView = this.getView.bind(this);
     this.setView = this.setView.bind(this);
+    this.saveCards = this.saveCards.bind(this);
+    this.addCard = this.addCard.bind(this);
   }
 
   setView(view) {
