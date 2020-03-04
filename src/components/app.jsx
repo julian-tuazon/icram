@@ -1,12 +1,15 @@
 import React from 'react';
 import ViewCards from './view-cards';
-import ReviewCards from './review-cards';
+import Review from './review-cards';
 import CreateCard from './create-card';
+import Nav from './nav';
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { view: 'view-cards' };
+    this.getView = this.getView.bind(this);
+    this.setView = this.setView.bind(this);
   }
 
   setView(view) {
@@ -27,6 +30,14 @@ export default class App extends React.Component {
   }
 
   render() {
-    return <div className='text-center'>{this.getView()}</div>;
+    return (
+      <div className=''>
+        <div className='text-center'>{this.getView()}</div>
+        <div>
+          <Nav setView={this.setView} />
+          {this.getView()}
+        </div>
+      </div>
+    );
   }
 }
