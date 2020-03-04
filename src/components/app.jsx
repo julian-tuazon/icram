@@ -6,11 +6,11 @@ import CreateCard from './create-card';
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {view: 'view-cards'};
+    this.state = { view: 'view-cards' };
   }
 
-  setView(currentView) {
-    this.setState({view: currentView});
+  setView(view) {
+    this.setState({ view });
   }
 
   getView() {
