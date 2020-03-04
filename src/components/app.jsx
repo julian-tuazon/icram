@@ -7,7 +7,7 @@ import Nav from './nav';
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { view: 'view-cards' };
+    this.state = { view: 'view-cards', cards: [] };
     this.getView = this.getView.bind(this);
     this.setView = this.setView.bind(this);
   }
@@ -30,6 +30,7 @@ export default class App extends React.Component {
   }
 
   render() {
+    console.log(this.state.cards);
     return (
       <div>
         <div className='d-flex justify-content-end mr-5'>
