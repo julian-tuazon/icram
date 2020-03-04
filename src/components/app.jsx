@@ -27,6 +27,6 @@ export default class App extends React.Component {
   }
 
   render() {
-    return <div>{this.getView()}</div>;
+    return <div className='text-center'>{this.getView()}</div>;
   }
 }
