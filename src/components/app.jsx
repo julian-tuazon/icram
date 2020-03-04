@@ -1,6 +1,6 @@
 import React from 'react';
 import ViewCards from './view-cards';
-import Review from './review-cards';
+import ReviewCards from './review-cards';
 import CreateCard from './create-card';
 import Nav from './nav';
 
@@ -21,7 +21,7 @@ export default class App extends React.Component {
       case 'create-card':
         return <CreateCard />;
       case 'review-cards':
-        return <Review />;
+        return <ReviewCards />;
       case 'view-cards':
         return <ViewCards />;
       default:
@@ -32,10 +32,10 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-        <div className='text-center my-3'>{this.getView()}</div>
-        <div className='d-flex flex-column align-items-center'>
+        <div className='d-flex justify-content-end mr-5'>
           <Nav setView={this.setView} />
         </div>
+        <div className='text-center my-3'>{this.getView()}</div>
       </div>
     );
   }
