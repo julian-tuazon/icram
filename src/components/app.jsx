@@ -35,7 +35,6 @@ export default class App extends React.Component {
         <div className='text-center my-3'>{this.getView()}</div>
         <div className='d-flex flex-column align-items-center'>
           <Nav setView={this.setView} />
-          <div className='my-5'>{this.getView()}</div>
         </div>
       </div>
     );
