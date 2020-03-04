@@ -29,8 +29,12 @@ export default class App extends React.Component {
     }
   }
 
+  saveCards() {
+    window.localStorage['flash-cards'] = JSON.stringify(this.state.cards);
+  }
+
   render() {
-    console.log(this.state.cards);
+    console.log('App cards:', this.state.cards);
     return (
       <div>
         <div className='d-flex justify-content-end mr-5'>
