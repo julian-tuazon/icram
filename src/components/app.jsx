@@ -31,7 +31,7 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div className=''>
+      <div>
         <div className='text-center'>{this.getView()}</div>
         <div>
           <Nav setView={this.setView} />

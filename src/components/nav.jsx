@@ -13,9 +13,9 @@ export default class Nav extends React.Component {
   render() {
     return (
       <div>
-        <div id='view-cards' onClick={this.handleClick}>View Cards</div>
-        <div id='review-cards' onClick={this.handleClick}>Review</div>
-        <div id='create-card' onClick={this.handleClick}>Create Card</div>
+        <span id='view-cards' onClick={this.handleClick}>View Cards</span>
+        <span id='review-cards' onClick={this.handleClick}>Review</span>
+        <span id='create-card' onClick={this.handleClick}>Create Card</span>
       </div>
     );
   }
