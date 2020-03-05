@@ -3,6 +3,7 @@ import ViewCards from './view-cards';
 import ReviewCards from './review-cards';
 import CreateCard from './create-card';
 import Nav from './nav';
+import {AppContext} from './app-context';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -40,14 +41,19 @@ export default class App extends React.Component {
   }
 
   render() {
+    console.log('this.context', this.context);
     console.log('App cards:', this.state.cards);
     return (
       <div>
         <div className='d-flex justify-content-end mr-5'>
           <Nav setView={this.setView} />
         </div>
-        <div className='text-center my-3'>{this.getView()}</div>
+        <AppContext.Provider value={}>
+          <div className='text-center my-3'>{this.getView()}</div>
+        </AppContext.Provider>
       </div>
     );
   }
 }
+
+App.contextType = AppContext;
