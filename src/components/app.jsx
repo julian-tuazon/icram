@@ -48,7 +48,7 @@ export default class App extends React.Component {
         <div className='d-flex justify-content-end mr-5'>
           <Nav setView={this.setView} />
         </div>
-        <AppContext.Provider value={}>
+        <AppContext.Provider value={{ addCard: this.addCard }}>
           <div className='text-center my-3'>{this.getView()}</div>
         </AppContext.Provider>
       </div>
