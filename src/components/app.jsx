@@ -41,7 +41,7 @@ export default class App extends React.Component {
   }
 
   render() {
-    console.log('this.context', this.context);
+    console.log('this.context:', this.context);
     console.log('App cards:', this.state.cards);
     return (
       <div>
