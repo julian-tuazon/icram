@@ -41,8 +41,8 @@ export default class App extends React.Component {
   }
 
   render() {
-    console.log('this.context:', this.context);
-    console.log('App cards:', this.state.cards);
+    // console.log('this.context:', this.context);
+    // console.log('App cards:', this.state.cards);
     return (
       <div>
         <div className='d-flex justify-content-end mr-5'>

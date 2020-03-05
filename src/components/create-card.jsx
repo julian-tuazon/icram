@@ -23,22 +23,26 @@ export default class CreateCard extends React.Component {
   }
 
   render() {
-    <form onSubmit={this.handleSubmit}>
-      <div>
-        <label htmlFor="question">Question:</label>
-      </div>
-      <div>
-        <input type="textarea" id="question" onChange={this.handleChange} />
-      </div>
-      <div>
-        <label htmlFor="answer">Answer:</label>
-      </div>
-      <div>
-        <input type="textarea" id="answer" onChange={this.handleChange} />
-      </div>
-      <button></button>
-    </form>
-    return <h1>Create New Card</h1>;
+    return (
+      <React.Fragment>
+        <h1>Create New Card</h1>
+        <form onSubmit={this.handleSubmit}>
+          <div>
+            <label htmlFor="question">Question:</label>
+          </div>
+          <div className="w-50 d-flex justify-content-center">
+            <textarea id="question" className="form-control" rows="3" onChange={this.handleChange} />
+          </div>
+          <div>
+            <label htmlFor="answer">Answer:</label>
+          </div>
+          <div className="w-50 d-flex justify-content-center">
+            <textarea id="answer" className="form-control" rows="3" onChange={this.handleChange} />
+          </div>
+          <button>Submit</button>
+        </form>
+      </React.Fragment>
+    );
   }
 }
 
