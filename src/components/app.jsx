@@ -3,13 +3,20 @@ import ViewCards from './view-cards';
 import ReviewCards from './review-cards';
 import CreateCard from './create-card';
 import Nav from './nav';
+import {AppContext} from './app-context';
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { view: 'view-cards' };
+    this.state = { view: 'view-cards', cards: [] };
     this.getView = this.getView.bind(this);
     this.setView = this.setView.bind(this);
+    this.saveCards = this.saveCards.bind(this);
+    this.addCard = this.addCard.bind(this);
+    this.passable = {
+      addCard: this.addCard,
+      setView: this.setView,
+    };
   }
 
   setView(view) {
@@ -29,14 +36,27 @@ export default class App extends React.Component {
     }
   }
 
+  saveCards() {
+    window.localStorage['flash-cards'] = JSON.stringify(this.state.cards);
+  }
+
+  addCard(card) {
+    this.setState({ cards: [...this.state.cards, card] }, this.saveCards);
+  }
+
   render() {
+    console.log('App Cards:', this.state.cards);
     return (
       <div>
         <div className='d-flex justify-content-end mr-5'>
           <Nav setView={this.setView} />
         </div>
-        <div className='text-center my-3'>{this.getView()}</div>
+        <AppContext.Provider value={this.passable}>
+          <div className='text-center my-3'>{this.getView()}</div>
+        </AppContext.Provider>
       </div>
     );
   }
 }
+
+App.contextType = AppContext;
