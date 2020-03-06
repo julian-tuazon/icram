@@ -13,6 +13,10 @@ export default class App extends React.Component {
     this.setView = this.setView.bind(this);
     this.saveCards = this.saveCards.bind(this);
     this.addCard = this.addCard.bind(this);
+    this.passable = {
+      addCard: this.addCard,
+      setView: this.setView,
+    };
   }
 
   setView(view) {
@@ -42,13 +46,13 @@ export default class App extends React.Component {
 
   render() {
     // console.log('this.context:', this.context);
-    // console.log('App cards:', this.state.cards);
+    console.log('App cards:', this.state.cards);
     return (
       <div>
         <div className='d-flex justify-content-end mr-5'>
           <Nav setView={this.setView} />
         </div>
-        <AppContext.Provider value={{ addCard: this.addCard }}>
+        <AppContext.Provider value={this.passable}>
           <div className='text-center my-3'>{this.getView()}</div>
         </AppContext.Provider>
       </div>
