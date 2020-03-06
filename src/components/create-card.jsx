@@ -27,19 +27,19 @@ export default class CreateCard extends React.Component {
       <React.Fragment>
         <h1>Create New Card</h1>
         <form className="mt-5" onSubmit={this.handleSubmit}>
-          <p>
+          <div>
             <label htmlFor="question">Question:</label>
-          </p>
-          <p className="w-50 mx-auto d-flex justify-content-center">
+          </div>
+          <div className="mb-4 w-50 mx-auto d-flex justify-content-center">
             <textarea id="question" className="form-control" rows="3" onChange={this.handleChange} value={this.state.question} />
-          </p>
+          </div>
           <div>
             <label htmlFor="answer">Answer:</label>
           </div>
           <div className="w-50 mx-auto d-flex justify-content-center">
             <textarea id="answer" className="form-control" rows="3" onChange={this.handleChange} value={this.state.answer} />
           </div>
-          <div className="my-3 w-50 mx-auto d-flex justify-content-end">
+          <div className="mt-4 w-50 mx-auto d-flex justify-content-end">
             <button type="submit" className="mr-3 btn btn-outline-primary">Save Card</button>
             <button type="button" className="btn btn-outline-danger">Cancel</button>
           </div>
