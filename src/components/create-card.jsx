@@ -10,6 +10,7 @@ export default class CreateCard extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleReset = this.handleReset.bind(this);
   }
 
   handleSubmit(e) {
@@ -20,6 +21,10 @@ export default class CreateCard extends React.Component {
 
   handleChange(e) {
     this.setState({ [e.target.id]: e.target.value });
+  }
+
+  handleReset() {
+    this.setState({ question: '', answer: '' });
   }
 
   render() {
@@ -41,7 +46,7 @@ export default class CreateCard extends React.Component {
           </div>
           <div className="mt-4 w-50 mx-auto d-flex justify-content-end">
             <button type="submit" className="mr-3 btn btn-outline-primary">Save Card</button>
-            <button type="button" className="btn btn-outline-danger">Cancel</button>
+            <button type="button" onClick={this.handleReset} className="btn btn-outline-danger">Cancel</button>
           </div>
         </form>
       </React.Fragment>
