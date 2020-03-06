@@ -16,7 +16,8 @@ export default class CreateCard extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.context.addCard({ question: this.state.question, answer: this.state.answer });
-    this.setState({ question: '', answer: '' });
+    this.handleReset();
+    this.context.setView('view-cards');
   }
 
   handleChange(e) {
