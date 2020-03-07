@@ -16,6 +16,7 @@ export default class App extends React.Component {
     this.passable = {
       addCard: this.addCard,
       setView: this.setView,
+      cards: this.state.cards,
     };
   }
 
