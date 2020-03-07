@@ -34,13 +34,13 @@ export default class CreateCard extends React.Component {
             <label htmlFor="question">Question:</label>
           </div>
           <div className="mb-4 w-50 mx-auto d-flex justify-content-center">
-            <textarea id="question" className="form-control" rows="3" onChange={this.handleChange} value={this.state.question} />
+            <textarea id="question" className="form-control" rows="3" onChange={this.handleChange} value={this.state.question} required/>
           </div>
           <div>
             <label htmlFor="answer">Answer:</label>
           </div>
           <div className="mb-4 w-50 mx-auto d-flex justify-content-center">
-            <textarea id="answer" className="form-control" rows="3" onChange={this.handleChange} value={this.state.answer} />
+            <textarea id="answer" className="form-control" rows="3" onChange={this.handleChange} value={this.state.answer} required/>
           </div>
           <div className="w-50 mx-auto d-flex justify-content-end">
             <button type="submit" className="mr-3 btn btn-outline-primary">Save Card</button>
