@@ -21,8 +21,8 @@ export default function ViewCards(props) {
 
   return (
     <React.Fragment>
-      <h1>My Cards</h1>
-      <div className="mx-5 mt-5">
+      <h1 className="mb-5">My Cards</h1>
+      <div className="mx-5">
         <div className="row row-cols-1 row-cols-md-3">
           {cards}
         </div>
