@@ -25,6 +25,11 @@ export default class ReviewCards extends React.Component {
     }
   }
 
+  toggleCardSide() {
+    if (this.state.currentSide === 'question') return this.setState({ currentSide: 'answer' });
+    this.setState({ currentSide: 'question' });
+  }
+
   getCardText() {
     if (this.context.activeCard) return this.context.activeCard[this.state.currentSide];
   }
