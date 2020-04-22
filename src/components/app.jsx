@@ -13,6 +13,7 @@ export default class App extends React.Component {
     this.setView = this.setView.bind(this);
     this.saveCards = this.saveCards.bind(this);
     this.addCard = this.addCard.bind(this);
+    this.setActiveCard = this.setActiveCard.bind(this);
   }
 
   setView(view) {
@@ -40,6 +41,10 @@ export default class App extends React.Component {
     this.setState({ cards: [...this.state.cards, card] }, this.saveCards);
   }
 
+  setActiveCard(index) {
+    this.setState({ activeCard: this.state.cards[index] });
+  }
+
   render() {
     console.log('App Cards:', this.state.cards);
 
@@ -48,6 +53,7 @@ export default class App extends React.Component {
       setView: this.setView,
       cards: this.state.cards,
       activeCard: this.state.activeCard,
+      setActiveCard: this.setActiveCard,
     };
 
     return (
