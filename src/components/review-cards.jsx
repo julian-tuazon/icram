@@ -11,6 +11,10 @@ export default class ReviewCards extends React.Component {
     if (this.context.cards.length) this.context.setActiveCard(0);
   }
 
+  handleClick(event) {
+    if (event.target.id === 'card') return this.toggleCardSide();
+  }
+
   nextCard() {
     if (this.context.cards.length) {
       const index = this.context.cards.findIndex(this.context.activeCard);
@@ -39,8 +43,10 @@ export default class ReviewCards extends React.Component {
       <>
         <h1 className="mb-5">Review Cards</h1>
         <div className="container">
-          <div className="w-75 mx-auto d-flex justify-content-center align-items-center text-white bg-dark review-card">
-            <h1>{this.getCardText()}</h1>
+          <div
+            className="w-75 mx-auto d-flex justify-content-center align-items-center text-white bg-dark review-card"
+            onClick={this.handleClick}>
+              <h1>{this.getCardText()}</h1>
           </div>
         </div>
       </>
