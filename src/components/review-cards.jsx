@@ -5,6 +5,7 @@ export default class ReviewCards extends React.Component {
   constructor(props) {
     super(props);
     this.state = { currentSide: 'question' };
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
@@ -43,10 +44,19 @@ export default class ReviewCards extends React.Component {
       <>
         <h1 className="mb-5">Review Cards</h1>
         <div className="container">
-          <div
-            className="w-75 mx-auto d-flex justify-content-center align-items-center text-white bg-dark review-card"
-            onClick={this.handleClick}>
+          <div className="d-flex bg-dark position-relative">
+            <div className="carousel-control-prev btn">
+              <span className="carousel-control-prev-icon"></span>
+            </div>
+            <div className="carousel-control-next btn">
+              <span className="carousel-control-next-icon"></span>
+            </div>
+            <div
+              className="w-75 mx-auto d-flex justify-content-center align-items-center text-white bg-dark review-card btn"
+              id="card"
+              onClick={this.handleClick}>
               <h1>{this.getCardText()}</h1>
+            </div>
           </div>
         </div>
       </>
