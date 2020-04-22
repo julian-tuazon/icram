@@ -1,7 +1,9 @@
 import React from 'react';
+import { AppContext } from './app-context';
 
 export default class ReviewCards extends React.Component {
   constructor(props) {
+    super(props);
     this.state = { currentSide: '' };
   }
 
