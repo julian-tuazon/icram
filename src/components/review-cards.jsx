@@ -4,11 +4,11 @@ import { AppContext } from './app-context';
 export default class ReviewCards extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { currentSide: '' };
+    this.state = { currentSide: 'question' };
   }
 
   componentDidMount() {
-    if (this.context.cards.length) this.context.setActiveCard(this.context.cards[0]);
+    if (this.context.cards.length) this.context.setActiveCard(0);
   }
 
   nextCard() {
@@ -25,8 +25,21 @@ export default class ReviewCards extends React.Component {
     }
   }
 
+  getCardText() {
+    if (this.context.activeCard) return this.context.activeCard[this.state.currentSide];
+  }
+
   render() {
-    return <h1>Review Cards</h1>;
+    return (
+      <>
+        <h1 className="mb-5">Review Cards</h1>
+        <div className="container">
+          <div className="w-75 mx-auto d-flex justify-content-center align-items-center text-white bg-dark review-card">
+            <h1>{this.getCardText()}</h1>
+          </div>
+        </div>
+      </>
+    );
   }
 }
 
