@@ -15,6 +15,9 @@ export default function ViewCards(props) {
           <h5 className="card-title">Answer:</h5>
           <p className="card-text">{card.answer}</p>
         </div>
+        <div className="card-footer bg-dark text-secondary">
+          <i className="far fa-trash-alt"></i>
+        </div>
       </div>
     </div>
   );
