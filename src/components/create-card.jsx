@@ -27,7 +27,7 @@ export default class CreateCard extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
+      <>
         <h1 className="mb-5">Create New Card</h1>
         <form onSubmit={this.handleSubmit}>
           <div>
@@ -47,7 +47,7 @@ export default class CreateCard extends React.Component {
             <button type="button" onClick={this.handleReset} className="btn btn-outline-danger">Cancel</button>
           </div>
         </form>
-      </React.Fragment>
+      </>
     );
   }
 }
