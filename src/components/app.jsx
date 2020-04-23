@@ -14,6 +14,7 @@ export default class App extends React.Component {
     this.saveCards = this.saveCards.bind(this);
     this.addCard = this.addCard.bind(this);
     this.setActiveCard = this.setActiveCard.bind(this);
+    this.deleteCard = this.deleteCard.bind(this);
   }
 
   setView(view) {
@@ -45,6 +46,13 @@ export default class App extends React.Component {
     this.setState({ activeCard: this.state.cards[index] });
   }
 
+  deleteCard(card) {
+    const newCards = [...this.state.cards];
+    const index = this.state.cards.findIndex(stateCard => stateCard === card);
+    newCards.splice(index, 1);
+    this.setState({ cards: newCards }, this.saveCards);
+  }
+
   render() {
     console.log('App Cards:', this.state.cards);
 
@@ -54,6 +62,7 @@ export default class App extends React.Component {
       cards: this.state.cards,
       activeCard: this.state.activeCard,
       setActiveCard: this.setActiveCard,
+      deleteCard: this.deleteCard,
     };
 
     return (
