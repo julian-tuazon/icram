@@ -51,9 +51,9 @@ export default class App extends React.Component {
     this.setState({ index });
   }
 
-  deleteCard(card) {
+  deleteCard(index) {
     const newCards = [...this.state.cards];
-    const index = this.state.cards.findIndex(stateCard => stateCard === card);
+    // const index = this.state.cards.findIndex(stateCard => stateCard === card);
     newCards.splice(index, 1);
     this.setState({ cards: newCards }, this.saveCards);
   }
