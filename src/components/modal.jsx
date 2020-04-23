@@ -19,7 +19,7 @@ export default class Modal extends React.Component {
   }
 
   deleteCard() {
-    this.context.deleteCard(this.props.card);
+    this.context.deleteCard(this.props.index);
     this.close();
   }
 
