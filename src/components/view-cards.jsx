@@ -16,7 +16,7 @@ export default function ViewCards(props) {
           <h5 className="card-title">Answer:</h5>
           <p className="card-text">{card.answer}</p>
         </div>
-        <Modal card={card}/>
+        <Modal card={card} index={index}/>
       </div>
     </div>
   );
