@@ -14,18 +14,20 @@ export default class ReviewCards extends React.Component {
 
   handleClick(event) {
     if (event.currentTarget.id === 'card') return this.toggleCardSide();
+    if (event.currentTarget.id === 'next') return this.nextCard();
+    if (event.currentTarget.id === 'prev') return this.previousCard();
   }
 
   nextCard() {
     if (this.context.cards.length) {
-      const index = this.context.cards.findIndex(this.context.activeCard);
-      this.context.setActiveCard(++index % this.context.cards.length);
+      const index = this.context.cards.findIndex(card => card === this.context.activeCard);
+      this.context.setActiveCard((index + 1) % this.context.cards.length);
     }
   }
 
   previousCard() {
     if (this.context.cards.length) {
-      const index = this.context.cards.findIndex(this.context.activeCard);
+      const index = this.context.cards.findIndex(card => card === this.context.activeCard);
       this.context.setActiveCard((index + this.context.cards.length - 1) % this.context.cards.length);
     }
   }
@@ -45,10 +47,10 @@ export default class ReviewCards extends React.Component {
         <h1 className="mb-5">Review Cards</h1>
         <div className="container">
           <div className="d-flex bg-dark position-relative">
-            <div className="carousel-control-prev btn">
+            <div className="carousel-control-prev btn" id="prev" onClick={this.handleClick}>
               <span className="carousel-control-prev-icon"></span>
             </div>
-            <div className="carousel-control-next btn">
+            <div className="carousel-control-next btn" id="next" onClick={this.handleClick}>
               <span className="carousel-control-next-icon"></span>
             </div>
             <div
