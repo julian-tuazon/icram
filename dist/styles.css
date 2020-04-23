@@ -1,3 +1,7 @@
 .review-card {
   height: 300px;
 }
+
+.overlay {
+  background: rgba(0, 0, 0, 0.6);
+}
