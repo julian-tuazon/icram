@@ -8,11 +8,12 @@ import {AppContext} from './app-context';
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { view: 'view-cards', cards: [] };
+    this.state = { view: 'view-cards', cards: [], activeCard: null };
     this.getView = this.getView.bind(this);
     this.setView = this.setView.bind(this);
     this.saveCards = this.saveCards.bind(this);
     this.addCard = this.addCard.bind(this);
+    this.setActiveCard = this.setActiveCard.bind(this);
   }
 
   setView(view) {
@@ -40,13 +41,19 @@ export default class App extends React.Component {
     this.setState({ cards: [...this.state.cards, card] }, this.saveCards);
   }
 
+  setActiveCard(index) {
+    this.setState({ activeCard: this.state.cards[index] });
+  }
+
   render() {
     console.log('App Cards:', this.state.cards);
 
     const passable = {
       addCard: this.addCard,
       setView: this.setView,
-      cards: this.state.cards
+      cards: this.state.cards,
+      activeCard: this.state.activeCard,
+      setActiveCard: this.setActiveCard,
     };
 
     return (
