@@ -8,7 +8,7 @@ import {AppContext} from './app-context';
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { view: 'view-cards', cards: [], activeCard: null };
+    this.state = { view: 'view-cards', cards: JSON.parse(window.localStorage['flash-cards']), activeCard: null };
     this.getView = this.getView.bind(this);
     this.setView = this.setView.bind(this);
     this.saveCards = this.saveCards.bind(this);
