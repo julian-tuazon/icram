@@ -43,12 +43,17 @@ export default class ReviewCards extends React.Component {
     if (this.context.activeCard) return this.context.activeCard[this.state.currentSide];
   }
 
+  getCardColor() {
+    if (this.state.currentSide === 'question') return 'd-flex bg-dark position-relative';
+    else return 'd-flex bg-secondary position-relative'
+  }
+
   render() {
     return (
       <>
         <h1 className="mb-5">Review Cards</h1>
         <div className="container">
-          <div className="d-flex bg-dark position-relative">
+          <div className={this.getCardColor()}>
             <div className="carousel-control-prev btn" id="prev" onClick={this.handleClick}>
               <span className="carousel-control-prev-icon"></span>
             </div>
@@ -56,7 +61,7 @@ export default class ReviewCards extends React.Component {
               <span className="carousel-control-next-icon"></span>
             </div>
             <div
-              className="w-75 mx-auto d-flex justify-content-center align-items-center text-white bg-dark review-card btn"
+              className="w-75 mx-auto d-flex justify-content-center align-items-center text-white review-card btn"
               id="card"
               onClick={this.handleClick}>
               <h1>{this.getCardText()}</h1>
