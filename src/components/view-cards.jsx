@@ -1,5 +1,6 @@
 import React from 'react';
 import {AppContext} from './app-context';
+import Modal from './modal';
 
 export default function ViewCards(props) {
   const context = React.useContext(AppContext);
@@ -15,9 +16,7 @@ export default function ViewCards(props) {
           <h5 className="card-title">Answer:</h5>
           <p className="card-text">{card.answer}</p>
         </div>
-        <div className="card-footer bg-dark text-secondary">
-          <i className="far fa-trash-alt"></i>
-        </div>
+        <Modal />
       </div>
     </div>
   );
