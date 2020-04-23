@@ -22,6 +22,7 @@ export default class ReviewCards extends React.Component {
     if (this.context.cards.length) {
       const index = this.context.cards.findIndex(card => card === this.context.activeCard);
       this.context.setActiveCard((index + 1) % this.context.cards.length);
+      this.setState({ currentSide: 'question' });
     }
   }
 
@@ -29,6 +30,7 @@ export default class ReviewCards extends React.Component {
     if (this.context.cards.length) {
       const index = this.context.cards.findIndex(card => card === this.context.activeCard);
       this.context.setActiveCard((index + this.context.cards.length - 1) % this.context.cards.length);
+      this.setState({ currentSide: 'question' });
     }
   }
 
