@@ -9,7 +9,7 @@ export default class ReviewCards extends React.Component {
   }
 
   componentDidMount() {
-    if (this.context.cards.length) this.context.setActiveCard(0);
+    this.context.setActiveCard(0);
   }
 
   handleClick(event) {
@@ -19,19 +19,15 @@ export default class ReviewCards extends React.Component {
   }
 
   nextCard() {
-    if (this.context.cards.length) {
-      const index = this.context.cards.findIndex(card => card === this.context.activeCard);
-      this.context.setActiveCard((index + 1) % this.context.cards.length);
-      this.setState({ currentSide: 'question' });
-    }
+    const index = this.context.cards.findIndex(card => card === this.context.activeCard);
+    this.context.setActiveCard((index + 1) % this.context.cards.length);
+    this.setState({ currentSide: 'question' });
   }
 
   previousCard() {
-    if (this.context.cards.length) {
-      const index = this.context.cards.findIndex(card => card === this.context.activeCard);
-      this.context.setActiveCard((index + this.context.cards.length - 1) % this.context.cards.length);
-      this.setState({ currentSide: 'question' });
-    }
+    const index = this.context.cards.findIndex(card => card === this.context.activeCard);
+    this.context.setActiveCard((index + this.context.cards.length - 1) % this.context.cards.length);
+    this.setState({ currentSide: 'question' });
   }
 
   toggleCardSide() {
@@ -49,6 +45,15 @@ export default class ReviewCards extends React.Component {
   }
 
   render() {
+    if (!this.context.cards.length) {
+      return (
+        <>
+          <h1 className="mb-5">Review Cards</h1>
+          <h5 className="text-center">No cards available.</h5>
+        </>
+      );
+    }
+
     return (
       <>
         <h1 className="mb-5">Review Cards</h1>
