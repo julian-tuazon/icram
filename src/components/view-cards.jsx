@@ -1,10 +1,13 @@
 import React from 'react';
-import {AppContext} from './app-context';
+import { AppContext } from './app-context';
 import Modal from './modal';
 
 export default function ViewCards(props) {
   const context = React.useContext(AppContext);
-  const updateCard = () => context.setView('update-card');
+  const updateCard = index => {
+    context.setIndex(index);
+    context.setView('update-card');
+  };
 
   const cards = context.cards.map((card, index) =>
     <div className="col mb-4" key={index}>
@@ -18,10 +21,9 @@ export default function ViewCards(props) {
           <p className="card-text">{card.answer}</p>
         </div>
         <div className="card-footer bg-dark">
-          <i className="far fa-edit btn text-secondary" onClick={updateCard}></i>
+          <i className="far fa-edit btn text-secondary" onClick={() => updateCard(index)}></i>
           <Modal card={card} index={index} />
         </div>
-
       </div>
     </div>
   );
