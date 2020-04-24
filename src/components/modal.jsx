@@ -28,9 +28,7 @@ export default class Modal extends React.Component {
 
     return (
       <>
-        <div className="card-footer bg-dark">
-          <i className="far fa-trash-alt btn text-secondary" onClick={this.open}></i>
-        </div>
+        <i className="far fa-trash-alt btn text-secondary" onClick={this.open}></i>
 
         <div className={modalClassName} tabIndex="-1" role="dialog">
           <div className="modal-dialog modal-dialog-centered" role="document">
