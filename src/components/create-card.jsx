@@ -12,5 +12,3 @@ export default function CreateCard(props) {
     </>
   );
 }
-
-CreateCard.contextType = AppContext;
