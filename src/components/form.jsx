@@ -25,7 +25,8 @@ export default class Form extends React.Component {
   }
 
   handleReset() {
-    this.setState({ question: '', answer: '' });
+    this.context.setView('view-cards');
+    // this.setState({ question: '', answer: '' });
   }
 
   render() {

@@ -8,10 +8,5 @@ export default function UpdateCard(props) {
   const getQuestion = () => context.cards[context.index].question;
   const getAnswer = () => context.cards[context.index].answer;
 
-  return (
-    <>
-      {/* <h1 className="mb-5">Update Card</h1> */}
-      <Form cardAction={updateCard} header={'Update Card'} question={getQuestion()} answer={getAnswer()} />
-    </>
-  );
+  return <Form cardAction={updateCard} header={'Update Card'} question={getQuestion()} answer={getAnswer()} />;
 }

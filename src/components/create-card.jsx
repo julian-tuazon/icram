@@ -1,14 +1,9 @@
 import React from 'react';
-import { AppContext } from './app-context';
 import Form from './form';
+import { AppContext } from './app-context';
 
 export default function CreateCard(props) {
   const context = React.useContext(AppContext);
 
-  return (
-    <>
-      {/* <h1 className="mb-5">Create New Card</h1> */}
-      <Form cardAction={context.addCard} header={'Create New Card'} />
-    </>
-  );
+  return <Form cardAction={context.addCard} header={'Create New Card'} />;
 }
