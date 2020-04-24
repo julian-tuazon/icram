@@ -10,7 +10,7 @@ export default class Form extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.handleReset = this.handleReset.bind(this);
+    this.handleCancel = this.handleCancel.bind(this);
   }
 
   handleSubmit(e) {
@@ -24,7 +24,7 @@ export default class Form extends React.Component {
     this.setState({ [e.target.id]: e.target.value });
   }
 
-  handleReset() {
+  handleCancel() {
     this.context.setView('view-cards');
     // this.setState({ question: '', answer: '' });
   }
@@ -48,7 +48,7 @@ export default class Form extends React.Component {
           </div>
           <div className="w-50 mx-auto d-flex justify-content-end">
             <button type="submit" className="mr-3 btn btn-outline-primary">Save Card</button>
-            <button type="button" onClick={this.handleReset} className="btn btn-outline-danger">Cancel</button>
+            <button type="button" onClick={this.handleCancel} className="btn btn-outline-danger">Cancel</button>
           </div>
         </form>
       </>
