@@ -2,8 +2,9 @@ import React from 'react';
 import ViewCards from './view-cards';
 import ReviewCards from './review-cards';
 import CreateCard from './create-card';
+import UpdateCard from './update-card';
 import Nav from './nav';
-import {AppContext} from './app-context';
+import { AppContext } from './app-context';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -16,6 +17,7 @@ export default class App extends React.Component {
     this.setActiveCard = this.setActiveCard.bind(this);
     this.deleteCard = this.deleteCard.bind(this);
     this.setIndex = this.setIndex.bind(this);
+    this.updateCard = this.updateCard.bind(this);
   }
 
   setView(view) {
@@ -30,6 +32,8 @@ export default class App extends React.Component {
         return <ReviewCards />;
       case 'view-cards':
         return <ViewCards />;
+      case 'update-card':
+        return <UpdateCard />;
       default:
         return null;
     }
@@ -58,6 +62,13 @@ export default class App extends React.Component {
     this.setState({ cards: newCards }, this.saveCards);
   }
 
+  updateCard(index, card) {
+    const newCards = [...this.state.cards];
+    // const index = this.state.cards.findIndex(stateCard => stateCard === card);
+    newCards[index] = card;
+    this.setState({ cards: newCards }, this.saveCards);
+  }
+
   render() {
     console.log('App Cards:', this.state.cards);
 
@@ -70,6 +81,7 @@ export default class App extends React.Component {
       deleteCard: this.deleteCard,
       index: this.state.index,
       setIndex: this.setIndex,
+      updateCard: this.updateCard,
     };
 
     return (
