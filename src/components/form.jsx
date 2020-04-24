@@ -31,7 +31,7 @@ export default class Form extends React.Component {
   render() {
     return (
       <>
-        {/* <h1 className="mb-5">{this.props.header}</h1> */}
+        <h1 className="mb-5">{this.props.header}</h1>
         <form onSubmit={this.handleSubmit}>
           <div>
             <label htmlFor="question">Question:</label>

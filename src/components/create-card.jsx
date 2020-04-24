@@ -7,8 +7,8 @@ export default function CreateCard(props) {
 
   return (
     <>
-      <h1 className="mb-5">Create New Card</h1>
-      <Form cardAction={context.addCard} />
+      {/* <h1 className="mb-5">Create New Card</h1> */}
+      <Form cardAction={context.addCard} header={'Create New Card'} />
     </>
   );
 }

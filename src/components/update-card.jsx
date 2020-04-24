@@ -10,8 +10,8 @@ export default function UpdateCard(props) {
 
   return (
     <>
-      <h1 className="mb-5">Update Card</h1>
-      <Form cardAction={updateCard} question={getQuestion()} answer={getAnswer()} />
+      {/* <h1 className="mb-5">Update Card</h1> */}
+      <Form cardAction={updateCard} header={'Update Card'} question={getQuestion()} answer={getAnswer()} />
     </>
   );
 }
