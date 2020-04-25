@@ -1,6 +1,6 @@
 import React from 'react';
-import { AppContext } from './app-context';
 import Modal from './modal';
+import { AppContext } from './app-context';
 
 export default function ViewCards(props) {
   const context = React.useContext(AppContext);
@@ -27,6 +27,15 @@ export default function ViewCards(props) {
       </div>
     </div>
   );
+
+  if (!context.cards.length) {
+    return (
+      <>
+        <h1 className="mb-5">My Cards</h1>
+        <h5 className="text-center">No cards available</h5>
+      </>
+    );
+  }
 
   return (
     <>

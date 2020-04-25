@@ -59,7 +59,7 @@ export default class ReviewCards extends React.Component {
       return (
         <>
           <h1 className="mb-5">Review Cards</h1>
-          <h5 className="text-center">No cards available.</h5>
+          <h5 className="text-center">No cards available</h5>
         </>
       );
     }
