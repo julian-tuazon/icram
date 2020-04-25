@@ -72,18 +72,18 @@ export default class App extends React.Component {
 
   render() {
     const passable = {
-      addCard: this.addCard,
       setView: this.setView,
       cards: this.state.cards,
+      addCard: this.addCard,
       deleteCard: this.deleteCard,
+      updateCard: this.updateCard,
       index: this.state.index,
       setIndex: this.setIndex,
-      updateCard: this.updateCard,
     };
 
     return (
-      <div>
-        <div className='d-flex justify-content-end mr-5'>
+      <div className="container">
+        <div className='d-flex justify-content-end'>
           <Nav setView={this.setView} view={this.state.view} />
         </div>
         <AppContext.Provider value={passable}>
