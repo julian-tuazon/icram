@@ -1,7 +1,7 @@
 import React from 'react';
 import { AppContext } from './app-context';
 
-export default class Modal extends React.Component {
+export default class DeleteModal extends React.Component {
   constructor(props) {
     super(props);
     this.state = { isOpen: false };

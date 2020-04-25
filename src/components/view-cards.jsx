@@ -1,5 +1,5 @@
 import React from 'react';
-import Modal from './modal';
+import DeleteModal from './delete-modal';
 import { AppContext } from './app-context';
 
 export default function ViewCards(props) {
@@ -22,7 +22,7 @@ export default function ViewCards(props) {
         </div>
         <div className="card-footer bg-dark">
           <i className="far fa-edit btn text-secondary" onClick={() => updateCard(index)}></i>
-          <Modal card={card} index={index} />
+          <DeleteModal card={card} index={index} />
         </div>
       </div>
     </div>
