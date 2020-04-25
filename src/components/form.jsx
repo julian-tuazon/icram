@@ -16,7 +16,6 @@ export default class Form extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.cardAction({ question: this.state.question, answer: this.state.answer });
-    // this.handleReset();
     this.context.setView('view-cards');
   }
 
@@ -26,7 +25,6 @@ export default class Form extends React.Component {
 
   handleCancel() {
     this.context.setView('view-cards');
-    // this.setState({ question: '', answer: '' });
   }
 
   render() {
@@ -37,16 +35,16 @@ export default class Form extends React.Component {
           <div>
             <label htmlFor="question">Question:</label>
           </div>
-          <div className="mb-4 w-50 mx-auto d-flex justify-content-center">
-            <textarea id="question" className="form-control" rows="2" onChange={this.handleChange} value={this.state.question} required />
+          <div className="mb-4 d-flex justify-content-center">
+            <textarea id="question" className="form-control" rows="2" onChange={this.handleChange} value={this.state.question} maxLength={200} required />
           </div>
           <div>
             <label htmlFor="answer">Answer:</label>
           </div>
-          <div className="mb-4 w-50 mx-auto d-flex justify-content-center">
-            <textarea id="answer" className="form-control" rows="2" onChange={this.handleChange} value={this.state.answer} required />
+          <div className="mb-4 d-flex justify-content-center">
+            <textarea id="answer" className="form-control" rows="2" onChange={this.handleChange} value={this.state.answer} maxLength={200} required />
           </div>
-          <div className="w-50 mx-auto d-flex justify-content-end">
+          <div className="d-flex justify-content-end">
             <button type="submit" className="mr-3 btn btn-outline-primary">Save Card</button>
             <button type="button" onClick={this.handleCancel} className="btn btn-outline-danger">Cancel</button>
           </div>
