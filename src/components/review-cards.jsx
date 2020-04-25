@@ -1,6 +1,6 @@
 import React from 'react';
-import { AppContext } from './app-context';
 import ProgressBar from './progress-bar';
+import { AppContext } from './app-context';
 
 export default class ReviewCards extends React.Component {
   constructor(props) {
@@ -10,26 +10,21 @@ export default class ReviewCards extends React.Component {
   }
 
   componentDidMount() {
-    // this.context.setActiveCard(0);
     this.context.setIndex(0);
   }
 
-  handleClick(event) {
-    if (event.currentTarget.id === 'card') return this.toggleCardSide();
-    if (event.currentTarget.id === 'next') return this.nextCard();
-    if (event.currentTarget.id === 'prev') return this.previousCard();
+  handleClick(e) {
+    if (e.currentTarget.id === 'card') return this.toggleCardSide();
+    if (e.currentTarget.id === 'next') return this.nextCard();
+    if (e.currentTarget.id === 'prev') return this.previousCard();
   }
 
   nextCard() {
-    // const index = this.context.cards.findIndex(card => card === this.context.activeCard);
-    // this.context.setActiveCard((index + 1) % this.context.cards.length);
     this.context.setIndex((this.context.index + 1) % this.context.cards.length);
     this.setState({ currentSide: 'question' });
   }
 
   previousCard() {
-    // const index = this.context.cards.findIndex(card => card === this.context.activeCard);
-    // this.context.setActiveCard((index + this.context.cards.length - 1) % this.context.cards.length);
     this.context.setIndex((this.context.index + this.context.cards.length - 1) % this.context.cards.length);
     this.setState({ currentSide: 'question' });
   }
@@ -40,7 +35,6 @@ export default class ReviewCards extends React.Component {
   }
 
   getCardText() {
-    // if (this.context.activeCard) return this.context.activeCard[this.state.currentSide];
     return this.context.cards[this.context.index][this.state.currentSide];
   }
 
@@ -59,7 +53,7 @@ export default class ReviewCards extends React.Component {
       return (
         <>
           <h1 className="mb-5">Review Cards</h1>
-          <h5 className="text-center">No cards available.</h5>
+          <h5 className="text-center">No cards available</h5>
         </>
       );
     }
@@ -67,7 +61,7 @@ export default class ReviewCards extends React.Component {
     return (
       <>
         <h1 className="mb-5">Review Cards</h1>
-        <div className="container">
+        <div>
           <ProgressBar percentComplete={this.getPercentComplete()}/>
           <div className={this.getCardColor()}>
             <div className="carousel-control-prev btn" id="prev" onClick={this.handleClick}>
@@ -80,7 +74,7 @@ export default class ReviewCards extends React.Component {
               className="w-75 mx-auto d-flex justify-content-center align-items-center text-white review-card btn"
               id="card"
               onClick={this.handleClick}>
-              <h1>{this.getCardText()}</h1>
+              <h5 className="h-100 d-flex align-items-center overflow-hidden text-break mb-0">{this.getCardText()}</h5>
             </div>
           </div>
         </div>

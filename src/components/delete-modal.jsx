@@ -1,7 +1,7 @@
 import React from 'react';
 import { AppContext } from './app-context';
 
-export default class Modal extends React.Component {
+export default class DeleteModal extends React.Component {
   constructor(props) {
     super(props);
     this.state = { isOpen: false };
@@ -28,9 +28,7 @@ export default class Modal extends React.Component {
 
     return (
       <>
-        <div className="card-footer bg-dark">
-          <i className="far fa-trash-alt btn text-secondary" onClick={this.open}></i>
-        </div>
+        <i className="far fa-trash-alt btn text-secondary" onClick={this.open}></i>
 
         <div className={modalClassName} tabIndex="-1" role="dialog">
           <div className="modal-dialog modal-dialog-centered" role="document">
@@ -46,10 +44,10 @@ export default class Modal extends React.Component {
                   <i className="far fa-times-circle text-danger mr-2"></i>
                     Are you sure you want to delete this card?
                   </div>
-                <div>
+                <div className="truncate">
                   <span className="font-weight-bold">Q:</span> {this.props.card.question}
                 </div>
-                <div>
+                <div className="truncate mb-2">
                   <span className="font-weight-bold">A:</span> {this.props.card.answer}
                 </div>
               </div>
@@ -67,4 +65,4 @@ export default class Modal extends React.Component {
   }
 }
 
-Modal.contextType = AppContext;
+DeleteModal.contextType = AppContext;

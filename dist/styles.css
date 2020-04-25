@@ -9,3 +9,11 @@
 .progress-bar-height {
   height: 10px;
 }
+
+.truncate {
+  width: 80%;
+  margin: 0 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

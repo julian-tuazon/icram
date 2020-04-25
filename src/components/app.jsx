@@ -2,19 +2,24 @@ import React from 'react';
 import ViewCards from './view-cards';
 import ReviewCards from './review-cards';
 import CreateCard from './create-card';
+import UpdateCard from './update-card';
 import Nav from './nav';
-import {AppContext} from './app-context';
+import { AppContext } from './app-context';
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { view: 'view-cards', cards: JSON.parse(window.localStorage['flash-cards']), activeCard: null, index: 0 };
+    this.state = {
+      view: 'view-cards',
+      cards: JSON.parse(window.localStorage['flash-cards']),
+      index: 0,
+    };
     this.getView = this.getView.bind(this);
     this.setView = this.setView.bind(this);
     this.saveCards = this.saveCards.bind(this);
     this.addCard = this.addCard.bind(this);
-    this.setActiveCard = this.setActiveCard.bind(this);
     this.deleteCard = this.deleteCard.bind(this);
+    this.updateCard = this.updateCard.bind(this);
     this.setIndex = this.setIndex.bind(this);
   }
 
@@ -30,6 +35,8 @@ export default class App extends React.Component {
         return <ReviewCards />;
       case 'view-cards':
         return <ViewCards />;
+      case 'update-card':
+        return <UpdateCard />;
       default:
         return null;
     }
@@ -53,29 +60,31 @@ export default class App extends React.Component {
 
   deleteCard(index) {
     const newCards = [...this.state.cards];
-    // const index = this.state.cards.findIndex(stateCard => stateCard === card);
     newCards.splice(index, 1);
     this.setState({ cards: newCards }, this.saveCards);
   }
 
-  render() {
-    console.log('App Cards:', this.state.cards);
+  updateCard(index, card) {
+    const newCards = [...this.state.cards];
+    newCards[index] = card;
+    this.setState({ cards: newCards }, this.saveCards);
+  }
 
+  render() {
     const passable = {
-      addCard: this.addCard,
       setView: this.setView,
       cards: this.state.cards,
-      activeCard: this.state.activeCard,
-      setActiveCard: this.setActiveCard,
+      addCard: this.addCard,
       deleteCard: this.deleteCard,
+      updateCard: this.updateCard,
       index: this.state.index,
       setIndex: this.setIndex,
     };
 
     return (
-      <div>
-        <div className='d-flex justify-content-end mr-5'>
-          <Nav setView={this.setView} />
+      <div className="container">
+        <div className='d-flex justify-content-center justify-content-md-end'>
+          <Nav setView={this.setView} view={this.state.view} />
         </div>
         <AppContext.Provider value={passable}>
           <div className='text-center my-3'>{this.getView()}</div>

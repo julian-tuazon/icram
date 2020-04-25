@@ -1,9 +1,13 @@
 import React from 'react';
-import {AppContext} from './app-context';
-import Modal from './modal';
+import DeleteModal from './delete-modal';
+import { AppContext } from './app-context';
 
 export default function ViewCards(props) {
   const context = React.useContext(AppContext);
+  const updateCard = index => {
+    context.setIndex(index);
+    context.setView('update-card');
+  };
 
   const cards = context.cards.map((card, index) =>
     <div className="col mb-4" key={index}>
@@ -16,18 +20,28 @@ export default function ViewCards(props) {
           <h5 className="card-title">Answer:</h5>
           <p className="card-text">{card.answer}</p>
         </div>
-        <Modal card={card} index={index}/>
+        <div className="card-footer bg-dark">
+          <i className="far fa-edit btn text-secondary" onClick={() => updateCard(index)}></i>
+          <DeleteModal card={card} index={index} />
+        </div>
       </div>
     </div>
   );
 
+  if (!context.cards.length) {
+    return (
+      <>
+        <h1 className="mb-5">My Cards</h1>
+        <h5 className="text-center">No cards available</h5>
+      </>
+    );
+  }
+
   return (
     <>
       <h1 className="mb-5">My Cards</h1>
-      <div className="mx-5">
-        <div className="row row-cols-1 row-cols-md-3">
-          {cards}
-        </div>
+      <div className="row row-cols-1 row-cols-md-3">
+        {cards}
       </div>
     </>
   );
