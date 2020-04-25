@@ -83,7 +83,7 @@ export default class App extends React.Component {
 
     return (
       <div className="container">
-        <div className='d-flex justify-content-end'>
+        <div className='d-flex justify-content-center justify-content-md-end'>
           <Nav setView={this.setView} view={this.state.view} />
         </div>
         <AppContext.Provider value={passable}>
