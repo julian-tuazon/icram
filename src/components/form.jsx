@@ -36,13 +36,13 @@ export default class Form extends React.Component {
             <label htmlFor="question">Question:</label>
           </div>
           <div className="mb-4 d-flex justify-content-center">
-            <textarea id="question" className="form-control" rows="2" onChange={this.handleChange} value={this.state.question} maxLength={200} required />
+            <textarea id="question" className="form-control" rows="2" onChange={this.handleChange} value={this.state.question} maxLength={500} required />
           </div>
           <div>
             <label htmlFor="answer">Answer:</label>
           </div>
           <div className="mb-4 d-flex justify-content-center">
-            <textarea id="answer" className="form-control" rows="2" onChange={this.handleChange} value={this.state.answer} maxLength={200} required />
+            <textarea id="answer" className="form-control" rows="2" onChange={this.handleChange} value={this.state.answer} maxLength={500} required />
           </div>
           <div className="d-flex justify-content-end">
             <button type="submit" className="mr-3 btn btn-outline-primary">Save Card</button>
