@@ -40,10 +40,8 @@ export default function ViewCards(props) {
   return (
     <>
       <h1 className="mb-5">My Cards</h1>
-      <div className="mx-5">
-        <div className="row row-cols-1 row-cols-md-3">
-          {cards}
-        </div>
+      <div className="row row-cols-1 row-cols-md-3">
+        {cards}
       </div>
     </>
   );
