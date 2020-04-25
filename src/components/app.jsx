@@ -9,15 +9,18 @@ import { AppContext } from './app-context';
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { view: 'view-cards', cards: JSON.parse(window.localStorage['flash-cards']), activeCard: null, index: 0 };
+    this.state = {
+      view: 'view-cards',
+      cards: JSON.parse(window.localStorage['flash-cards']),
+      index: 0,
+    };
     this.getView = this.getView.bind(this);
     this.setView = this.setView.bind(this);
     this.saveCards = this.saveCards.bind(this);
     this.addCard = this.addCard.bind(this);
-    this.setActiveCard = this.setActiveCard.bind(this);
     this.deleteCard = this.deleteCard.bind(this);
-    this.setIndex = this.setIndex.bind(this);
     this.updateCard = this.updateCard.bind(this);
+    this.setIndex = this.setIndex.bind(this);
   }
 
   setView(view) {
@@ -57,27 +60,21 @@ export default class App extends React.Component {
 
   deleteCard(index) {
     const newCards = [...this.state.cards];
-    // const index = this.state.cards.findIndex(stateCard => stateCard === card);
     newCards.splice(index, 1);
     this.setState({ cards: newCards }, this.saveCards);
   }
 
   updateCard(index, card) {
     const newCards = [...this.state.cards];
-    // const index = this.state.cards.findIndex(stateCard => stateCard === card);
     newCards[index] = card;
     this.setState({ cards: newCards }, this.saveCards);
   }
 
   render() {
-    console.log('App Cards:', this.state.cards);
-
     const passable = {
       addCard: this.addCard,
       setView: this.setView,
       cards: this.state.cards,
-      activeCard: this.state.activeCard,
-      setActiveCard: this.setActiveCard,
       deleteCard: this.deleteCard,
       index: this.state.index,
       setIndex: this.setIndex,
