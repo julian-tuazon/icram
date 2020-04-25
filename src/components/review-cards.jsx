@@ -74,7 +74,7 @@ export default class ReviewCards extends React.Component {
               className="w-75 mx-auto d-flex justify-content-center align-items-center text-white review-card btn"
               id="card"
               onClick={this.handleClick}>
-              <h5 className="text-break">{this.getCardText()}</h5>
+              <h5 className="h-75 d-flex align-items-center overflow-auto mb-0">{this.getCardText()}</h5>
             </div>
           </div>
         </div>
