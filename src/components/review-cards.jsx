@@ -67,7 +67,7 @@ export default class ReviewCards extends React.Component {
     return (
       <>
         <h1 className="mb-5">Review Cards</h1>
-        <div className="container">
+        <div>
           <ProgressBar percentComplete={this.getPercentComplete()}/>
           <div className={this.getCardColor()}>
             <div className="carousel-control-prev btn" id="prev" onClick={this.handleClick}>
