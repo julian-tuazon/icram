@@ -44,10 +44,10 @@ export default class Modal extends React.Component {
                   <i className="far fa-times-circle text-danger mr-2"></i>
                     Are you sure you want to delete this card?
                   </div>
-                <div>
+                <div className="truncate">
                   <span className="font-weight-bold">Q:</span> {this.props.card.question}
                 </div>
-                <div>
+                <div className="truncate mb-2">
                   <span className="font-weight-bold">A:</span> {this.props.card.answer}
                 </div>
               </div>
