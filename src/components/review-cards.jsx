@@ -1,6 +1,6 @@
 import React from 'react';
-import { AppContext } from './app-context';
 import ProgressBar from './progress-bar';
+import { AppContext } from './app-context';
 
 export default class ReviewCards extends React.Component {
   constructor(props) {
