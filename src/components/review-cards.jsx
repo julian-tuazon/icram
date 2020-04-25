@@ -10,7 +10,6 @@ export default class ReviewCards extends React.Component {
   }
 
   componentDidMount() {
-    // this.context.setActiveCard(0);
     this.context.setIndex(0);
   }
 
@@ -21,15 +20,11 @@ export default class ReviewCards extends React.Component {
   }
 
   nextCard() {
-    // const index = this.context.cards.findIndex(card => card === this.context.activeCard);
-    // this.context.setActiveCard((index + 1) % this.context.cards.length);
     this.context.setIndex((this.context.index + 1) % this.context.cards.length);
     this.setState({ currentSide: 'question' });
   }
 
   previousCard() {
-    // const index = this.context.cards.findIndex(card => card === this.context.activeCard);
-    // this.context.setActiveCard((index + this.context.cards.length - 1) % this.context.cards.length);
     this.context.setIndex((this.context.index + this.context.cards.length - 1) % this.context.cards.length);
     this.setState({ currentSide: 'question' });
   }
@@ -40,7 +35,6 @@ export default class ReviewCards extends React.Component {
   }
 
   getCardText() {
-    // if (this.context.activeCard) return this.context.activeCard[this.state.currentSide];
     return this.context.cards[this.context.index][this.state.currentSide];
   }
 
