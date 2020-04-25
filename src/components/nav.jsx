@@ -3,7 +3,7 @@ import React from 'react';
 export default function Nav(props) {
   const handleClick = e => props.setView(e.target.id);
   const viewCardsClassName = props.view === 'view-cards' ? 'mr-2 btn btn-primary' : 'mr-2 btn text-primary';
-  const reviewCardsClassName = props.view === 'review-cards' ? 'mr-2 btn btn-primary' : 'mr-2 btn text-primary';
+  const reviewCardsClassName = props.view === 'review-cards' ? 'mr-2 btn btn-primary d-flex align-items-center' : 'mr-2 btn text-primary d-flex align-items-center';
   const createCardClassName = props.view === 'create-card' ? 'btn btn-primary' : 'btn text-primary';
 
   return (
