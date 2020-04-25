@@ -65,4 +65,4 @@ export default class DeleteModal extends React.Component {
   }
 }
 
-Modal.contextType = AppContext;
+DeleteModal.contextType = AppContext;

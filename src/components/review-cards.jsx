@@ -13,10 +13,10 @@ export default class ReviewCards extends React.Component {
     this.context.setIndex(0);
   }
 
-  handleClick(event) {
-    if (event.currentTarget.id === 'card') return this.toggleCardSide();
-    if (event.currentTarget.id === 'next') return this.nextCard();
-    if (event.currentTarget.id === 'prev') return this.previousCard();
+  handleClick(e) {
+    if (e.currentTarget.id === 'card') return this.toggleCardSide();
+    if (e.currentTarget.id === 'next') return this.nextCard();
+    if (e.currentTarget.id === 'prev') return this.previousCard();
   }
 
   nextCard() {
