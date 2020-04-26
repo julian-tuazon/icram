@@ -12,7 +12,8 @@ export default class App extends React.Component {
     super(props);
     this.state = {
       view: 'welcome',
-      cards: JSON.parse(window.localStorage['flash-cards']),
+      cards: [],
+      // cards: JSON.parse(window.localStorage['flash-cards']),
       index: 0,
     };
     this.getView = this.getView.bind(this);
