@@ -4,13 +4,14 @@ import ReviewCards from './review-cards';
 import CreateCard from './create-card';
 import UpdateCard from './update-card';
 import Nav from './nav';
+import Welcome from './welcome';
 import { AppContext } from './app-context';
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      view: 'view-cards',
+      view: 'welcome',
       cards: JSON.parse(window.localStorage['flash-cards']),
       index: 0,
     };
@@ -37,6 +38,8 @@ export default class App extends React.Component {
         return <ViewCards />;
       case 'update-card':
         return <UpdateCard />;
+      case 'welcome':
+        return <Welcome />;
       default:
         return null;
     }
@@ -80,6 +83,14 @@ export default class App extends React.Component {
       index: this.state.index,
       setIndex: this.setIndex,
     };
+
+    if (this.state.view === 'welcome') {
+      return (
+        <AppContext.Provider value={passable}>
+          <Welcome />;
+        </AppContext.Provider>
+      );
+    }
 
     return (
       <div className="container">
