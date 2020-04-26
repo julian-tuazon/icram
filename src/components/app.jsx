@@ -93,7 +93,7 @@ export default class App extends React.Component {
     if (this.state.view === 'welcome') {
       return (
         <AppContext.Provider value={passable}>
-          <Welcome />;
+          <Welcome />
         </AppContext.Provider>
       );
     }
