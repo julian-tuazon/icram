@@ -17,3 +17,21 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.fade-slide {
+  animation: fade-slide 0.7s ease;
+}
+
+.fade-slide-reverse {
+  animation: fade-slide-reverse 0.7s ease;
+}
+
+@keyframes fade-slide {
+  0% { opacity: 0; transform: translateY(-100%) }
+  100% { opacity: 1; transform: translateY(0%) }
+}
+
+@keyframes fade-slide-reverse {
+  0% { opacity: 0; transform: translateY(100%) }
+  100% { opacity: 1; transform: translateY(0%) }
+}
