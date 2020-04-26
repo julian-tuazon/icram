@@ -19,11 +19,11 @@
 }
 
 .fade-slide {
-  animation: fade-slide 0.7s ease;
+  animation: fade-slide 1s ease;
 }
 
 .fade-slide-reverse {
-  animation: fade-slide-reverse 0.7s ease;
+  animation: fade-slide-reverse 1s ease;
 }
 
 @keyframes fade-slide {
