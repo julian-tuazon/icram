@@ -13,7 +13,6 @@ export default class App extends React.Component {
     this.state = {
       view: 'welcome',
       cards: [],
-      // cards: JSON.parse(window.localStorage['flash-cards']),
       index: 0,
     };
     this.getView = this.getView.bind(this);
@@ -23,6 +22,12 @@ export default class App extends React.Component {
     this.deleteCard = this.deleteCard.bind(this);
     this.updateCard = this.updateCard.bind(this);
     this.setIndex = this.setIndex.bind(this);
+  }
+
+  componentDidMount() {
+    if (window.localStorage['flash-cards']) {
+      this.setState({ cards: JSON.parse(window.localStorage['flash-cards']) });
+    }
   }
 
   setView(view) {
