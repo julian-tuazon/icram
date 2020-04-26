@@ -8,6 +8,7 @@ export default function ViewCards(props) {
     context.setIndex(index);
     context.setView('update-card');
   };
+  const createCard = () => context.setView('create-card');
 
   const cards = context.cards.map((card, index) =>
     <div className="col mb-4" key={index}>
@@ -32,7 +33,8 @@ export default function ViewCards(props) {
     return (
       <>
         <h1 className="mb-5">My Cards</h1>
-        <h5 className="text-center">No cards available</h5>
+        <h5 className="text-center mb-3">No cards available</h5>
+        <button className="btn text-primary" onClick={createCard}>Create a new card?</button>
       </>
     );
   }

@@ -17,6 +17,7 @@ export default class ReviewCards extends React.Component {
     if (e.currentTarget.id === 'card') return this.toggleCardSide();
     if (e.currentTarget.id === 'next') return this.nextCard();
     if (e.currentTarget.id === 'prev') return this.previousCard();
+    if (e.currentTarget.id === 'create') return this.createCard();
   }
 
   nextCard() {
@@ -27,6 +28,10 @@ export default class ReviewCards extends React.Component {
   previousCard() {
     this.context.setIndex((this.context.index + this.context.cards.length - 1) % this.context.cards.length);
     this.setState({ currentSide: 'question' });
+  }
+
+  createCard() {
+    this.context.setView('create-card');
   }
 
   toggleCardSide() {
@@ -53,7 +58,8 @@ export default class ReviewCards extends React.Component {
       return (
         <>
           <h1 className="mb-5">Review Cards</h1>
-          <h5 className="text-center">No cards available</h5>
+          <h5 className="text-center mb-3">No cards available</h5>
+          <button className="btn text-primary" id="create" onClick={this.handleClick}>Create a new card?</button>
         </>
       );
     }
