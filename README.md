@@ -32,7 +32,7 @@ https://icram.juliantuazon.com/
 ## Development
 
 #### System Requirements
-- None
+- npm 6 or higher.
 
 #### Getting Started
 1. Clone the repository.
