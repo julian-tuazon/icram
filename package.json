@@ -1,7 +1,7 @@
 {
-  "name": "react-flash-cards-pt",
+  "name": "icram",
   "version": "1.0.0",
-  "description": "A Flash Card App built with React.js",
+  "description": "A flash card application built with React",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server",
@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/julian-tuazon/react-flash-cards-pt.git"
+    "url": "git+https://github.com/julian-tuazon/icram.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/julian-tuazon/react-flash-cards-pt/issues"
+    "url": "https://github.com/julian-tuazon/icram/issues"
   },
-  "homepage": "https://github.com/julian-tuazon/react-flash-cards-pt#readme",
+  "homepage": "https://github.com/julian-tuazon/icram#readme",
   "devDependencies": {
     "@babel/core": "^7.8.6",
     "@babel/plugin-transform-react-jsx": "^7.8.3",
