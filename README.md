@@ -1,6 +1,6 @@
 # iCram
 
-A flash card application built with React.
+A flash card application that enables users to manage flash cards for studying.
 
 Users can create, view, review, update, and delete flash cards.
 
