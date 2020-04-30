@@ -27,7 +27,7 @@ https://icram.juliantuazon.com/
 - User can visualize review session progress via a dynamic progress bar
 
 ## Preview
-![icram](https://user-images.githubusercontent.com/57813827/80295304-b39ae000-8726-11ea-86ec-8677bf4fea29.png)
+![icram](https://user-images.githubusercontent.com/57813827/80751786-41881980-8adf-11ea-811a-4950a15eb206.png)
 
 ## Development
 
