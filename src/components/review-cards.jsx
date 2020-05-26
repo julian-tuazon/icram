@@ -83,6 +83,10 @@ export default class ReviewCards extends React.Component {
               <h5 className="h-100 d-flex align-items-center overflow-hidden text-break mb-0">{this.getCardText()}</h5>
             </div>
           </div>
+          <div>
+            <h5>Click arrows to navigate between cards</h5>
+            <h5>Click card body to flip card</h5>
+          </div>
         </div>
       </>
     );
