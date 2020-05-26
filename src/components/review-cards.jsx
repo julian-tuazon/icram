@@ -44,8 +44,8 @@ export default class ReviewCards extends React.Component {
   }
 
   getCardColor() {
-    if (this.state.currentSide === 'question') return 'd-flex bg-dark position-relative';
-    else return 'd-flex bg-secondary position-relative'
+    if (this.state.currentSide === 'question') return 'd-flex bg-dark position-relative mb-4';
+    else return 'd-flex bg-secondary position-relative mb-4'
   }
 
   getPercentComplete() {
@@ -83,9 +83,9 @@ export default class ReviewCards extends React.Component {
               <h5 className="h-100 d-flex align-items-center overflow-hidden text-break mb-0">{this.getCardText()}</h5>
             </div>
           </div>
-          <div>
-            <h5>Click arrows to navigate between cards</h5>
-            <h5>Click card body to flip card</h5>
+          <div className="mb-5">
+            <p>Click arrows to navigate between cards</p>
+            <p>Click card body to flip card</p>
           </div>
         </div>
       </>
